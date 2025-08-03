@@ -89,23 +89,13 @@ The repository implements a Physics-Informed GAN for Elastic FWI:
 - **FNO-based Elastic Wave Solver**: A Fourier Neural Operator simulates elastic wave propagation, generating synthetic waveforms from the generator’s outputs, enforced by PDE residual loss (\( L_{\text{pde}} = || \rho \partial^2 u / \partial t^2 - \nabla \cdot \sigma ||^2 \)).
 
 ---
-
-### 2. Expanded Use Cases
-The subsurface property images (\( V_p \), \( V_s \), density, etc.) enable multiple applications:
-- **Earthquake Prediction**: Identifies fault zones and stress regimes for seismic hazard assessment.
-- **Oil and Gas Exploration**: Maps reservoir properties for drilling optimization.
-- **Geothermal Energy**: Detects subsurface thermal structures for resource evaluation.
-- **Carbon Sequestration**: Assesses storage site integrity using density and elastic moduli.
-- **Infrastructure Planning**: Evaluates ground stability for construction by analyzing Poisson’s ratio and Young’s modulus.
-The `SpectrogramConverter` (output: `[B, 1, 1000, 70]`) enhances these by providing frequency-domain features, reducing cycle-skipping in FWI.
-
----
-
 ###  Input and Output
 - **Input**: Seismic waveforms `[B, 10, 1000, 70]` (concatenated `u_x` and `u_z`, each `[B, 5, 1000, 70]`), representing multicomponent seismic data (1000 time points, 70 spatial points).
 - **Output**: Subsurface properties `[B, 5, 70, 70]` (\( V_p \), \( V_s \), density, Poisson’s ratio, Young’s modulus), forming 70x70 spatial grids for geophysical analysis.
 
 ---
+
+
 ### Use Cases
 The subsurface property images ($ V_p $, $ V_s $, density, etc.) enable multiple applications:
 
@@ -115,6 +105,7 @@ Geothermal Energy: Detects subsurface thermal structures for resource evaluation
 Carbon Sequestration: Assesses storage site integrity using density and elastic moduli.
 Infrastructure Planning: Evaluates ground stability for construction by analyzing Poisson’s ratio and Young’s modulus.
 The SpectrogramConverter (output: [B, 1, 1000, 70]) enhances these by providing frequency-domain features, reducing cycle-skipping in FWI.
+
 
 ---
 
