@@ -1,5 +1,5 @@
 # Elastic Full Waveform Inversion (FWI) using Physics-Informed GAN & FNO
-
+Imagine peering inside the Earth to predict earthquakes or find hidden resources, like a medical scanner for our planet. This project uses advanced AI to analyze seismic waves—the vibrations from earthquakes or other sources—to map the Earth's subsurface. By transforming complex seismic data into clear images of underground properties, our model helps predict earthquakes, locate oil and gas, and support clean energy solutions.
 This repository implements a **Physics-Informed Generative Adversarial Network (GAN)** for **Elastic Full Waveform Inversion (FWI)**. It combines a **U-Net Generator**, a **Wasserstein Discriminator**, and a **Fourier Neural Operator (FNO)** based **Elastic Wave Solver**. The pipeline is designed for reconstructing sub-surface Earth properties (e.g., Vp, Vs, ρ) from seismic waveforms (u_x, u_z).
 
 ---
